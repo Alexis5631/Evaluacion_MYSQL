@@ -2,22 +2,22 @@ INSERT INTO libros VALUES ("211816DBA","CRONICAS DE UNA MUERTE ANUNCIADA","DISPO
 
 INSERT INTO genero(tipo_genero) VALUES ("ACCION"),("SUSPENSO"),("COMEDIA");
 
-INSERT INTO genero_libro(ISBN,id_genero) VALUES ("211816DBA","202020"),("784894HBS","212121");
+INSERT INTO libro_autor(ISBN,fecha_lanzamiento) VALUES ("211816DBA",NOW()),("784894HBS",NOW());
 
-INSERT INTO autores VALUES ("1234","GABRIEL GARCIA MARQUEZ"),("54584","JOSE FLOREZ");
+INSERT INTO genero_libro(ISBN,id_genero) VALUES ("211816DBA", 1),("784894HBS", 2);
 
-INSERT INTO libro_autor(fecha_lanzamiento) VALUES ("25/05/2002"),("10/04/2026");
+INSERT INTO autores(nombre, id_libroAutor) VALUES ("GABRIEL GARCIA MARQUEZ", 1),("JOSE FLOREZ", 2);
 
-INSERT INTO miembros(nombre,apellidos,documento,direccion) VALUES ("PEPITO","PEREZ","1097094358","CRA 65A #125-32"),("JORGE","SAENZ","CALLE 27");
+INSERT INTO miembros(nombre,apellidos,documento,direccion) VALUES ("PEPITO","PEREZ","1097094358","CRA 65A #125-32"),("JORGE","SAENZ","1094095321","CALLE 27 #15-10");
 
-INSERT INTO miembro_libro(fecha_lanzamiento) VALUES ("15/12/1999"),("24/11/2006");
+INSERT INTO miembro_libro(id_miembros,ISBN,fecha_lanzamiento) VALUES (1, "211816DBA","1999-12-02"),(2, "784894HBS","2006-11-20");
 
-INSERT INTO transaccion(fecha_prestamo,fecha_devolucion) VALUES ("12/03/2024"),("16/01/2000");
+INSERT INTO transaccion(fecha_prestamo,fecha_devolucion) VALUES ("2024-03-15","2024-03-25"),("2000-01-16","2000-01-26");
 
-INSERT INTO libro_transaccion(id_transaccion,id_miembros) VALUES ("151617","161418"),("161718","171819");
+INSERT INTO libro_transaccion (id_transaccion, id_miembros, ISBN) VALUES (1, 1, "211816DBA"),(2, 2, "784894HBS");
 
 INSERT INTO editor(nombre_editor) VALUES ("EL MASCAPITO"),("HARRY POTTER");
 
-INSERT INTO publicaciones(fecha_publicacion,edicciones,id_editor) VALUES ("25/11/1989","451515"),("14/02/2003","461616");
+INSERT INTO publicaciones(fecha_publicacion, id_editor) VALUES ("1999-02-12", 1),("2003-10-26", 2);
 
-INSERT INTO edicion(id_editor) VALUES ("451515","461616");
+INSERT INTO edicion (id_editor) VALUES (1),(2);
